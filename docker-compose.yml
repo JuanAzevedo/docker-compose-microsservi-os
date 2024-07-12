@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  api_eventos:
+    build: ../api_eventos
+    ports:
+      - "5000:5000"
+    depends_on:
+      - api_database
+    networks:
+      - appnetwork
+
+  api_database:
+    build: ../api_database
+    volumes:
+      - database-data:/app/data
+    ports:
+      - "5001:5001"
+    networks:
+      - appnetwork
+
+volumes:
+  database-data:
+
+networks:
+  appnetwork:
+    driver: bridge
