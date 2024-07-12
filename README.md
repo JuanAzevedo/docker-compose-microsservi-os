@@ -1,21 +1,37 @@
-# Microservices Docker Compose
+# Orquestração dos Microserviços com Docker Compose
 
-Este repositório contém a configuração Docker Compose para orquestrar os serviços de eventos e banco de dados.
+Este repositório é responsável por orquestrar os microserviços de eventos e de banco de dados usando Docker Compose.
 
-## Estrutura
+## Pré-requisitos
 
-Os serviços são organizados em repositórios separados e incluídos aqui como submódulos:
-- API de Eventos: [api_eventos](https://github.com/JuanAzevedo/api_eventos.git)
-- API de Banco de Dados: [api_database](https://github.com/JuanAzevedo/api_database.git)
+- Docker
+- Docker Compose
 
-## Como Executar
+## Configuração e Execução
 
-1. Clone este repositório:
-   ```bash
-   git clone --recurse-submodules https://github.com/JuanAzevedo/docker-compose-microsservicos.git
-2. Navegue até o diretório do projeto:
-   cd docker-compose-microsservicos
-3. Construa e inicie os serviços com Docker Compose:
-   docker-compose up --build
-   
-   Isso iniciará os serviços api_eventos na porta 5000 e api_database na porta 5001. A comunicação entre os serviços ocorre automaticamente através da rede definida no Docker Compose.
+### Clonagem dos Repositórios
+
+Antes de iniciar, clone todos os repositórios necessários:
+
+```bash
+mkdir meu-projeto
+cd meu-projeto
+git clone https://github.com/JuanAzevedo/docker-compose-microsservicos.git
+git clone https://github.com/JuanAzevedo/api_eventos.git
+git clone https://github.com/JuanAzevedo/api_database.git
+```
+
+### Inicialização
+Navegue até o diretório do Docker Compose e execute:
+```bash
+cd docker-compose-microsservicos
+docker-compose up --build
+```
+
+Isto irá construir e levantar todos os serviços definidos no arquivo docker-compose.yml.
+
+### Finalização
+Para interromper e remover os containers, além de redes e volumes, utilize:
+```bash
+docker-compose down --volumes --remove-orphans
+```

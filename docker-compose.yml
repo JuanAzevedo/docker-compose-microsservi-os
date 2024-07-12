@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   api_eventos:
-    build: ../api_eventos
+    build: ../api_service
     ports:
       - "5000:5000"
     depends_on:
