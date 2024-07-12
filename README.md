@@ -16,9 +16,9 @@ Antes de iniciar, clone todos os repositórios necessários:
 ```bash
 mkdir meu-projeto
 cd meu-projeto
-git clone https://github.com/JuanAzevedo/docker-compose-microsservicos.git
-git clone https://github.com/JuanAzevedo/api_eventos.git
-git clone https://github.com/JuanAzevedo/api_database.git
+git clone https://github.com/JuanAzevedo/docker-compose-microsservicos
+git clone https://github.com/JuanAzevedo/api_service
+git clone https://github.com/JuanAzevedo/api_database
 ```
 
 ### Inicialização
